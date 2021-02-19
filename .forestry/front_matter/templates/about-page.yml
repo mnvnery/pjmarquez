@@ -1,6 +1,6 @@
 ---
 label: About Page
-hide_body: false
+hide_body: true
 fields:
 - type: text
   name: layout
@@ -29,4 +29,5 @@ fields:
   name: instagramLink
   label: Instagram Link
 pages:
+- about.html
 - about.html
