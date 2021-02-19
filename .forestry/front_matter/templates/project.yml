@@ -14,3 +14,7 @@ fields:
 - type: image_gallery
   name: images
   label: images
+- name: add_the_images_for_this_project
+  type: image_gallery
+  config: {}
+  label: Add the images for this project
