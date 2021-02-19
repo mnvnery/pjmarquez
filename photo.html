@@ -16,7 +16,7 @@ layout: default
     {% for photo in site.photo %}
     {% if photo.mainProject == true %}
         {% for item in photo.images %}
-            <img src="{{ site.baseurl }}/assets/img/{{ item }}"/>
+            <img src="{{ site.baseurl }}/{{ item }}"/>
         {% endfor %}
     {% endif %}
     {% endfor %}
