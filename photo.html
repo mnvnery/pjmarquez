@@ -3,10 +3,9 @@ layout: default
 
 ---
 <div class="topNav">
-    <a href="{{ site.baseurl }}/photo" class="activeLink">Over the Rainbow</a>
-    <a href="{{ site.baseurl }}/tropicos" class="photoLinks">Trópicos Utópicos</a>
-    <a href="{{ site.baseurl }}/idols" class="photoLinks">Idols</a>
-    <a href="{{ site.baseurl }}/fotocopia" class="photoLinks">Da Fotocópia ao Original</a>
+    {% for project in site.projects %}
+        <a href="{{ site.baseurl }}/photo" class="activeLink">{{ project.title }}</a>
+    {% endfor %}
 </div>
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
