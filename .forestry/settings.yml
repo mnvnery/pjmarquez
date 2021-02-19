@@ -4,9 +4,8 @@ auto_deploy: false
 admin_path: "/admin"
 webhook_url: 
 sections:
-- type: document
-  path: about.html
-  label: About Page
+- type: heading
+  label: Projects
 - type: directory
   path: _cinema
   label: Cinema Projects
@@ -19,6 +18,11 @@ sections:
   create: all
   match: "**/*"
   new_doc_ext: html
+- type: heading
+  label: Pages
+- type: document
+  path: about.html
+  label: About Page
 upload_dir: assets/img
 public_path: assets/img
 front_matter_path: ''
