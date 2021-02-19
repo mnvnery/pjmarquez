@@ -9,13 +9,13 @@ sections:
   label: Cinema Projects
   create: all
   match: "**/*"
-  new_doc_ext: ".html"
+  new_doc_ext: html
 - type: directory
   path: _photo
   label: Photo Projects
   create: all
   match: "**/*"
-  new_doc_ext: ".html"
+  new_doc_ext: html
 - type: jekyll-pages
   label: Pages
   create: all
