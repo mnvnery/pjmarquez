@@ -1,0 +1,37 @@
+---
+label: Cinema Project
+hide_body: true
+fields:
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+  default: cinema
+- type: text
+  name: title
+  label: Project Title
+- type: text
+  name: director
+  label: Director
+- type: text
+  name: moreInfo
+  label: More Information
+  description: Description/Awards<br>
+- name: vimeo_embed_code
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Vimeo Embed Code
+  description: bring in the embed code from vimeo or youtube
+- name: main_image
+  type: file
+  config:
+    maxSize: 64
+  label: Main Still
+pages:
+- _cinema/ex-shammam.html
+- _cinema/ultimafloresta.html

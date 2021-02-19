@@ -1,0 +1,32 @@
+---
+label: About Page
+hide_body: true
+fields:
+- type: text
+  name: layout
+  label: layout
+  hidden: true
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: About Body
+  description: Use &lt;br&gt;&lt;br&gt; to separate paragraphs
+- type: text
+  name: email
+  label: Email
+- type: text
+  name: imdbLink
+  label: IMDB Link
+- type: text
+  name: vimeoLink
+  label: Vimeo Link
+- type: text
+  name: instagramLink
+  label: Instagram Link
+pages:
+- about.html

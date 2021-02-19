@@ -1,10 +1,10 @@
 ---
 layout: default
-
 ---
+
 <div class="topNav">
     {% for photo in site.photo reversed %}
-    {% if photo.mainProject == true %}
+    {% if photo.title == page.title %}
         <a href="{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
     {% else %}
         <a href="{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
@@ -13,12 +13,8 @@ layout: default
 </div>
 
 <div class="projectImages">
-    {% for photo in site.photo %}
-    {% if photo.mainProject == true %}
-        {% for item in photo.images %}
-            <img src="{{ site.baseurl }}/{{ item }}"/>
-        {% endfor %}
-    {% endif %}
+    {% for item in page.images %}
+        <img src="{{ site.baseurl }}/{{ item }}"/>
     {% endfor %}
 </div>
 
@@ -27,3 +23,4 @@ layout: default
     <a href="{{ site.baseurl }}/index">PEDRO J. MÁRQUEZ</a>
     <a href="{{ site.baseurl }}/all">ALL</a>
 </div>
+
