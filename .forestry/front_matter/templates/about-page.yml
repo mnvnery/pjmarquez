@@ -15,6 +15,7 @@ fields:
     schema:
       format: markdown
   label: About Body
+  description: Paragraphs require two line breaks :)
 - type: text
   name: email
   label: Email
