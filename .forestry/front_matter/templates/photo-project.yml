@@ -5,12 +5,16 @@ fields:
 - type: text
   name: layout
   label: layout
+  default: photo
+  hidden: true
 - type: text
   name: title
-  label: title
+  label: Project Title
 - type: boolean
   name: mainProject
-  label: mainProject
+  label: Is this the main project?
+  description: The main project is the one that appears when we first click PHOTO.
+    There can only be one selected
 - type: image_gallery
   name: images
-  label: images
+  label: All images
