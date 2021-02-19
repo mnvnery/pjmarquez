@@ -18,3 +18,5 @@ fields:
 - type: image_gallery
   name: images
   label: All images
+pages:
+- _photo/tropicos.html
