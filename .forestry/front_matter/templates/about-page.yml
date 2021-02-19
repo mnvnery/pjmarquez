@@ -21,3 +21,5 @@ fields:
 - type: text
   name: instagramLink
   label: Instagram Link
+pages:
+- about.html
