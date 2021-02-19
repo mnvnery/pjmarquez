@@ -1,10 +1,10 @@
 ---
 layout: default
-
 ---
+
 <div class="topNav">
     {% for project in site.projects reversed %}
-    {% if project.mainProject == true %}
+    {% if project.title == page.title %}
         <a href="{{ project.url }}" class="activeLink">{{ project.title }}</a>
     {% else %}
         <a href="{{ project.url }}" class="photoLinks">{{ project.title }}</a>
@@ -13,12 +13,8 @@ layout: default
 </div>
 
 <div class="projectImages">
-    {% for project in site.projects %}
-    {% if project.mainProject == true %}
-        {% for item in project.images %}
-            <img src="{{ site.baseurl }}/assets/img/{{ item }}"/>
-        {% endfor %}
-    {% endif %}
+    {% for item in page.images %}
+        <img src="{{ site.baseurl }}/assets/img/{{ item }}"/>
     {% endfor %}
 </div>
 
