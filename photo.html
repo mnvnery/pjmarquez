@@ -3,19 +3,19 @@ layout: default
 
 ---
 <div class="topNav">
-    {% for project in site.projects reversed %}
-    {% if project.mainProject == true %}
-        <a href="{{ project.url }}" class="activeLink">{{ project.title }}</a>
+    {% for photo in site.photo reversed %}
+    {% if photo.mainProject == true %}
+        <a href="{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
     {% else %}
-        <a href="{{ project.url }}" class="photoLinks">{{ project.title }}</a>
+        <a href="{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
     {% endif %}
     {% endfor %}
 </div>
 
 <div class="projectImages">
-    {% for project in site.projects %}
-    {% if project.mainProject == true %}
-        {% for item in project.images %}
+    {% for photo in site.photo %}
+    {% if photo.mainProject == true %}
+        {% for item in photo.images %}
             <img src="{{ site.baseurl }}/assets/img/{{ item }}"/>
         {% endfor %}
     {% endif %}
