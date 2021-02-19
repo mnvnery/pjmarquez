@@ -1,6 +1,6 @@
 ---
 label: About Page
-hide_body: false
+hide_body: true
 fields:
 - type: text
   name: layout
@@ -15,6 +15,7 @@ fields:
     schema:
       format: markdown
   label: About Body
+  description: Paragraphs require two line breaks :)
 - type: text
   name: email
   label: Email
@@ -28,4 +29,5 @@ fields:
   name: instagramLink
   label: Instagram Link
 pages:
+- about.html
 - about.html
