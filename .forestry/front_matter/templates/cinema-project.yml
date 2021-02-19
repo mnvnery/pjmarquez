@@ -17,17 +17,17 @@ fields:
   name: moreInfo
   label: More Information
   description: Description/Awards<br>
-- name: main_image
-  type: file
-  config:
-    maxSize: 64
-  label: Main Still
 - name: vimeo_embed_code
   type: text
   config:
     required: false
   label: Vimeo Embed Code
   description: bring in the embed code from the trailer (vimeo or youtube is fine!)
+- name: main_image
+  type: file
+  config:
+    maxSize: 64
+  label: Main Still
 pages:
 - _cinema/ex-shammam.html
 - _cinema/ultimafloresta.html
