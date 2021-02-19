@@ -6,9 +6,15 @@ fields:
   name: layout
   label: layout
   hidden: true
-- type: text
-  name: body
-  label: About Text
+- name: body
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+  label: About Body
 - type: text
   name: email
   label: Email
