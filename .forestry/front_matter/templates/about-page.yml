@@ -1,0 +1,22 @@
+---
+label: About Page
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+- type: text
+  name: body
+  label: body
+- type: text
+  name: email
+  label: email
+- type: text
+  name: imdbLink
+  label: imdbLink
+- type: text
+  name: vimeoLink
+  label: vimeoLink
+- type: text
+  name: instagramLink
+  label: instagramLink
