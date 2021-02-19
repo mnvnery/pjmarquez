@@ -5,18 +5,19 @@ fields:
 - type: text
   name: layout
   label: layout
+  hidden: true
 - type: text
   name: body
-  label: body
+  label: About Text
 - type: text
   name: email
-  label: email
+  label: Email
 - type: text
   name: imdbLink
-  label: imdbLink
+  label: IMDB Link
 - type: text
   name: vimeoLink
-  label: vimeoLink
+  label: Vimeo Link
 - type: text
   name: instagramLink
-  label: instagramLink
+  label: Instagram Link
