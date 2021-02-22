@@ -8,6 +8,11 @@ layout: default
 </div>
 
 <div class="centerList">
+    <div class="photo-images">
+        {% for photo in site.photo reversed %}
+        <img src="{{ photo.}}" alt="">
+        {% endfor %}
+    </div>
     <ul>
         {% for photo in site.photo reversed %}
         <li>{{ photo.title }}</li>
@@ -16,8 +21,8 @@ layout: default
         <li>{{ cinema.title }}</li>
         {% endfor %}
     </ul>
+    <div class="cinema-images"></div>
 </div>
-
 
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
