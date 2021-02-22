@@ -18,8 +18,17 @@ fields:
 - type: image_gallery
   name: images
   label: All images
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
 pages:
 - _photo/fotocopia.html
 - _photo/idols.html
 - _photo/overtherainbow.html
-- _photo/tropicos.html
+- _photo/tropicus.html
