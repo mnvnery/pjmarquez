@@ -32,12 +32,6 @@ fields:
   config:
     maxSize: 64
   label: Main Still
-- name: thumbnail
-  type: file
-  config:
-    maxSize: 64
-  label: Thumbnail
-  description: Image to show up on All page when hovering title
 pages:
 - _cinema/ex-shammam.html
 - _cinema/ultimafloresta.html
