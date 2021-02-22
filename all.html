@@ -9,20 +9,12 @@ layout: default
 
 <div class="centerList">
     <ul>
-        <li>Over the Rainbow</li>
-        <li>Trópicos Utópicos</li>
-        <li>Idols</li>
-        <li>Da Fotocópia ao Original</li>
-        <li>A Última Floresta</li>
-        <li>Ex-Shammam</li>
-        <li>Just like Our Parents</li>
-        <li>Our Son</li>
-        <li>The Winds of Lent</li>
-        <li>Saura(S)</li>
-        <li>The Red Virgin</li>
-        <li>Kidnapped</li>
-        <li>Lupin the Third</li>
-        <li>Still Night </li>
+        {% for photo in site.photo reversed %}
+        <li>{{ photo.title }}</li>
+        {% endfor %}
+        {% for cinema in site.cinema reversed %}
+        <li>{{ cinema.title }}</li>
+        {% endfor %}
     </ul>
 </div>
 
