@@ -13,7 +13,6 @@ plugins:
   - jekyll-feed
 
 sass:
-  sass_dir: _sass
   style: compressed
 
 collections:
