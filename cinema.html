@@ -2,6 +2,18 @@
 layout: dark
 
 ---
+<div class="cinema-titles">
+{% for cinema in site.cinema reversed %}
+    <p>{{ cinema.title }}</p>
+{% endfor %}
+</div>
+
+<div class="cinema-grid">
+    {% for cinema in site.cinema reversed %}
+        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="">
+    {% endfor %}
+</div>
+
 
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
