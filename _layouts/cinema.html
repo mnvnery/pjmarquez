@@ -5,7 +5,10 @@ layout: dark
 <a href="{{ site.baseurl }}/cinema" class="exitbtn">x</a>
 
 <div class="trailer-container">
-    {{ page.vimeo_embed_code }}
+    <div>
+        {{ page.vimeo_embed_code }}
+        <p class="trailer-description">{{ page.title }} - {{ page.director }}. <span style="opacity: 0.5;">{{ page.moreInfo }}</span></p>
+    </div>
 </div>
 
 <div class="bottomNav">
