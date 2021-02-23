@@ -7,16 +7,28 @@ layout: default
     <a href="{{ site.baseurl }}/cinema">CINEMA</a>
 </div>
 
+<div class="photo-thumbnail">
+    <img src="" class="thumbnail-img">
+</div>
+
+<div class="cinema-thumbnail">
+    <img src="" class="thumbnail-img-cinema">
+</div>
+
 <div class="centerList">
+  
+    
     <ul>
         {% for photo in site.photo reversed %}
-        <li>{{ photo.title }}</li>
+        <li class="item" data-image="{{ site.baseurl }}/{{ photo.thumbnail }}">{{ photo.title }}</li>
         {% endfor %}
         {% for cinema in site.cinema reversed %}
-        <li>{{ cinema.title }}</li>
+        <li class="cinemaitem" data-image="{{ site.baseurl }}/{{ cinema.main_image }}">{{ cinema.title }}</li>
         {% endfor %}
     </ul>
 </div>
+
+
 
 
 <div class="bottomNav">
@@ -24,3 +36,44 @@ layout: default
     <a href="{{ site.baseurl }}/index">PEDRO J. MÁRQUEZ</a>
     <a href="{{ site.baseurl }}/all">ALL</a>
 </div>
+
+<script>
+    const items = document.querySelectorAll('.item')
+    const image = document.querySelector('.thumbnail-img')
+
+    const cinemaitems = document.querySelectorAll('.cinemaitem')
+    const cinemaimage = document.querySelector('.thumbnail-img-cinema')
+
+    const links = document.getElementsByTagName("a");
+
+    items.forEach((el) => {
+      el.addEventListener('mouseover', (e) => {
+        imageData = e.target.getAttribute('data-image')
+        e.target.style.zIndex = 99
+        image.setAttribute('src', imageData)
+        document.body.style.backgroundColor = "white";
+        document.body.style.color = "black";
+        $('a').css('color', 'black');
+      })
+      el.addEventListener('mouseleave', (e) => {
+        e.target.style.zIndex = 1
+        image.setAttribute('src', '')
+      })
+    })
+
+    cinemaitems.forEach((x) => {
+      x.addEventListener('mouseover', (e) => {
+        imageData = e.target.getAttribute('data-image')
+        e.target.style.zIndex = 99
+        cinemaimage.setAttribute('src', imageData)
+        document.body.style.backgroundColor = "black";
+        document.body.style.color = "white";
+        $('a').css('color', 'white');
+
+      })
+      x.addEventListener('mouseleave', (e) => {
+        e.target.style.zIndex = 1
+        cinemaimage.setAttribute('src', '')
+      })
+    })
+</script>
