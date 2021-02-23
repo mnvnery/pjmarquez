@@ -2,15 +2,13 @@
 layout: dark
 
 ---
-<div class="cinema-titles">
-{% for cinema in site.cinema reversed %}
-    <p>{{ cinema.title }}</p>
-{% endfor %}
+<div class="title-container">
+    <p class="cinema-title">Your Son</p>
 </div>
 
 <div class="cinema-grid">
-    {% for cinema in site.cinema reversed %}
-        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="">
+    {% for cinema in site.cinema %}
+        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="project-img" data-title="{{ cinema.title }}" class="cinema-img {{ cinema.index }}">
     {% endfor %}
 </div>
 
@@ -20,3 +18,26 @@ layout: dark
     <a href="{{ site.baseurl }}/index">PEDRO J. MÁRQUEZ</a>
     <a href="{{ site.baseurl }}/all">ALL</a>
 </div>
+
+
+<script>
+    const images = document.querySelectorAll('.cinema-img')
+    const title = document.querySelector(".cinema-title")
+
+    images.forEach((el) => {
+      el.addEventListener('mouseover', (e) => {
+        titleData = e.target.getAttribute('data-title')
+        title.innerHTML = titleData
+        title.style.visibility = 'visible'
+      })
+      el.addEventListener('mouseleave', (e) => {
+        title.innerHTML = "Your Son"
+        title.style.visibility = 'hidden'
+      })
+    })
+
+    $('img.cinema-img').each(function(index){
+        $(this).addClass('i_'+ index);
+    });
+
+</script>
