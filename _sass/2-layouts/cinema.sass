@@ -5,6 +5,11 @@
 
 #dark a 
     color: white
+    display: block
+    line-height: 0
+
+#dark .bottomNav
+    margin-bottom: 27px
 
 .title-container
     margin: 15px 20px
@@ -12,10 +17,13 @@
     top: 0
 
 .cinema-grid
-    margin: 45px 25px
+    margin: 45px 20px
     display: flex
     flex-direction: column
     flex-wrap: wrap
+    justify-content: flex-start
+    align-items: flex-start
+    align-content: stretch
 
 
 .cinema-title
@@ -23,16 +31,28 @@
 
 .cinema-img 
     margin: 10px 0
+    display: block
+
+.cinema-img:hover
+    cursor: pointer
 
 .i_0, .i_4, .i_6, .i_10, .i_12, .i_16, .i_18
     align-self: flex-start
 
 .i_2, .i_8, .i_14, .i_20
-    margin-left: 10vw
+    margin-left: 8vw
 
 .i_5, .i_11, .i_17
     align-self: flex-end
-    margin-right: 13vw
+    margin-right: 10vw
 
 .i_1, .i_3, .i_7, .i_9, .i_13, .i_15, .i_19
     align-self: flex-end
+
+
+.exitbtn
+    position: fixed
+    top: 0
+    right: 0
+    margin: 20px 15px
+    font-size: 1.2em

@@ -8,10 +8,19 @@ layout: dark
 
 <div class="cinema-grid">
     {% for cinema in site.cinema %}
-        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="project-img" data-title="{{ cinema.title }}" class="cinema-img {{ cinema.index }}">
+        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="project-img" data-title="{{ cinema.title }}" class="cinema-img" data-link="{{ cinema.url }}">
     {% endfor %}
 </div>
 
+<div class="topNav">
+    {% for photo in site.photo %}
+    {% if photo.title == page.title %}
+        <a href="{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
+    {% else %}
+        <a href="{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
+    {% endif %}
+    {% endfor %}
+</div>
 
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
@@ -39,5 +48,13 @@ layout: dark
     $('img.cinema-img').each(function(index){
         $(this).addClass('i_'+ index);
     });
+
+    images.forEach((el) => {
+      el.addEventListener('click', (e) => {
+        link = e.target.getAttribute('data-link')
+        window.location.href = link
+      })
+    })
+
 
 </script>
