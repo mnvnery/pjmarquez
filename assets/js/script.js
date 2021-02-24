@@ -14,6 +14,6 @@ window.onload = function () {
   }
 
 
-
-  
+const image = newArray ();
+image[0] = 
   
