@@ -13,7 +13,6 @@
     right: 0
     margin: 15px 20px
     font-size: 1.25vw
-    
 
 .centerTitle 
     display: flex
@@ -26,18 +25,31 @@
     top: 0
     z-index: -1
 
+#mySidebar
+    display: none
+
+.menu-icon
+    display: none
+
 .logo 
     width: 17% !important
 
 .logo-white
      width: 17% !important
      display: none
+
 .leftSide
     background-color: transparent
     width: 50vw
     height: 100vh
     position: fixed
     left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-right: 10vw
+
 
 .rightSide
     background-color: transparent
@@ -45,4 +57,76 @@
     height: 100vh
     position: fixed
     right: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-left: 10vw
 
+#leftImages.portrait
+    height: 50vh
+
+#leftImages.landscape
+    width: 60%
+
+#rightImages.landscape
+    width: 75%
+
+#leftImages
+    display: none
+
+#rightImages
+    display: none
+
+@media screen and(max-width: 600px)
+    .leftSide, .rightSide
+        display: none
+
+    #mySidebar
+        background-color: white
+        z-index: 1
+        position: fixed
+        top: 0
+        right: 0
+        height: 100vh
+        width: 100vw
+        font-size: 6vw
+        padding: 30px
+
+    .close-icon 
+        float: right
+
+    .project-titles
+        opacity: 0.3
+        font-size: 5vw
+
+    .bottomNav
+        display: none
+    
+    .topNav
+        font-size: 5.5vw
+        position: fixed
+        bottom: 0
+        left: 0
+        right: 0
+        margin: 20px 30px
+    
+    .centerTitle
+        margin: 30px 30px
+        display: flex
+        justify-content: space-between
+        align-items: start
+
+
+    .logo
+        width: 68% !important
+
+    .logo-white
+        width: 68% !important
+
+    .mobile-none
+        display: none !important
+
+    .menu-icon
+        display: inline-block
+    
