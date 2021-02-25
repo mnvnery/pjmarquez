@@ -7,10 +7,11 @@ window.onload = function () {
       if (images[i].naturalWidth > images[i].naturalHeight) {
         $(images[i]).addClass('landscape');
       } 
-      else{ 
-        if(images[i].naturalWidth < images[i].naturalHeight) {
-          $(images[i]).addClass('portrait');  
-        }
+      else if (images[i].naturalWidth < images[i].naturalHeight) {
+        $(images[i]).addClass('portrait');
+      }
+      else {
+        $(images[i]).addClass('square');
       }
     }
   }
