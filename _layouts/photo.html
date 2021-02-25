@@ -20,7 +20,7 @@ layout: default
 </div>
 
 <div class="topNav">
-    {% for photo in site.photo %}
+    {% for photo in site.photo reversed %}
     {% if photo.title == page.title %}
         <a href="{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
     {% else %}
