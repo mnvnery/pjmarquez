@@ -20,7 +20,7 @@ layout: dark
 
 <div class="cinema-grid">
     {% for cinema in site.cinema %}
-        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="project-img" data-title="{{ cinema.title }}" class="cinema-img" data-link="{{ cinema.url }}">
+        <img src="{{ site.baseurl }}/{{ cinema.main_image }}" alt="project-img" data-title="{{ cinema.title }}" class="cinema-img" data-link="{{ site.baseurl}}{{ cinema.url }}">
 
     {% endfor %}
 </div>
@@ -51,7 +51,7 @@ layout: dark
         })
       })
     }
-    
+
     $('img.cinema-img').each(function(index){
         $(this).addClass('i_'+ index);
     });
