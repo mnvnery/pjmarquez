@@ -6,13 +6,7 @@ layout: dark
   <img src="{{ site.baseurl }}/assets/img/close-white.svg" alt="menu icon" class="close-icon">
   <a href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
   <a href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
-  {% for photo in site.photo %}
-  <a href="{{ site.baseurl }}/{{ photo.url }}"><p class="project-titles">{{ photo.title }}</p></a>
-  {% endfor %}
   <a href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>
-  {% for cinema in site.cinema %}
-  <a href="{{ site.baseurl }}/{{ cinema.url }}"><p class="project-titles">{{ cinema.title }}</p></a>
-  {% endfor %}   
 </div>
 
 <div class="navigation nav-dark">
@@ -42,19 +36,22 @@ layout: dark
 <script>
     const images = document.querySelectorAll('.cinema-img')
     const title = document.querySelector(".cinema-title")
-
-    images.forEach((el) => {
-      el.addEventListener('mouseover', (e) => {
-        titleData = e.target.getAttribute('data-title')
-        title.innerHTML = titleData
-        title.style.visibility = 'visible'
+  
+    const mediaQuery = window.matchMedia("(min-width: 600px)")
+    if (mediaQuery.matches) {
+      images.forEach((el) => {
+        el.addEventListener('mouseover', (e) => {
+          titleData = e.target.getAttribute('data-title')
+          title.innerHTML = titleData
+          title.style.visibility = 'visible'
+        })
+        el.addEventListener('mouseleave', (e) => {
+          title.innerHTML = "Your Son"
+          title.style.visibility = 'hidden'
+        })
       })
-      el.addEventListener('mouseleave', (e) => {
-        title.innerHTML = "Your Son"
-        title.style.visibility = 'hidden'
-      })
-    })
-
+    }
+    
     $('img.cinema-img').each(function(index){
         $(this).addClass('i_'+ index);
     });

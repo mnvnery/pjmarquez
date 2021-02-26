@@ -5,13 +5,7 @@ layout: default
     <img src="{{ site.baseurl }}/assets/img/close.svg" alt="menu icon" class="close-icon">
     <a href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
     <a href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
-    {% for photo in site.photo %}
-    <a href="{{ site.baseurl }}/{{ photo.url }}"><p class="project-titles">{{ photo.title }}</p></a>
-    {% endfor %}
     <a href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>
-    {% for cinema in site.cinema %}
-    <a href="{{ site.baseurl }}/{{ cinema.url }}"><p class="project-titles">{{ cinema.title }}</p></a>
-    {% endfor %}   
 </div>
 
 <div class="navigation">
@@ -19,16 +13,6 @@ layout: default
     <img src="{{ site.baseurl }}/assets/img/menu.svg" alt="menu icon" class="menu-icon">
 </div>
 
-<div class="mobile">
-    {% for photo in site.photo reversed %}
-    {% for item in photo.images %}
-        <section>
-            <img class="photo-mobile" data-info='{{ photo.title }}/{{ forloop.index }}/{{ forloop.length }}' src="{{ site.baseurl }}/{{ item }}">
-            <div class="mobile-description"><span>{{ photo.title }}</span> <span style="opacity: 0.3;">{{ forloop.index }}/{{ forloop.length }}</span></div>
-        </section>
-    {% endfor %}
-    {% endfor %}
-</div>
 
 
 
@@ -58,13 +42,13 @@ layout: default
                 {% if forloop.first %}
                     <div class="carousel-item active">
                         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                            <img src="{{ site.baseurl }}/{{ item }}"/>
+                            <img class="carousel-img" src="{{ site.baseurl }}/{{ item }}"/>
                         </div>
                     </div>
                     {% else %}
                     <div class="carousel-item">
                         <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                            <img src="{{ site.baseurl }}/{{ item }}"/>
+                            <img class="carousel-img" src="{{ site.baseurl }}/{{ item }}"/>
                         </div>
                     </div>
                     {% endif %}

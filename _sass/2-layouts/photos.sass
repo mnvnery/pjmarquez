@@ -13,7 +13,7 @@
 .carousel-item 
     height: 100%
     
-img
+.carousel-img
     max-width: 40%;
     max-height: 75vh;
 
@@ -34,17 +34,9 @@ img
 
 
 @media screen and ( max-width: 600px )
-    .topNav
-        display: none
+    .carousel-img
+        max-width: 82%
 
-    .photo-mobile.landscape
-        width: 85%
-
-    .photo-mobile.portrait
-        height: 50vh
-
-    .photo-mobile.square
-        width: 85%
 
     .mobile-description
         width: 85%
@@ -64,6 +56,15 @@ img
         margin: 30px
         font-size: 5.5vw
 
-    .projectImages
-        display: none
-    
+    .topNav
+        font-size: 4.5vw
+        position: fixed
+        bottom: 5px
+        left: 0
+        right: 0
+        margin: 20px 30px
+        display: flex
+        flex-direction: column
+
+    .topNav a 
+        margin-bottom: 2vh

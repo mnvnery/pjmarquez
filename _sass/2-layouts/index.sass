@@ -65,14 +65,13 @@
     padding-left: 10vw
 
 
-#leftImages.portrait
-    height: 50vh
+#leftImages
+    max-height: 50vh
+    max-width: 60%
+    
 
-#leftImages.landscape
-    width: 60%
-
-#rightImages.landscape
-    width: 75%
+#rightImages
+    max-width: 75%
 
 #leftImages
     display: none
@@ -105,14 +104,6 @@
     .bottomNav
         display: none
 
-    .topNav
-        font-size: 5.5vw
-        position: fixed
-        bottom: 0
-        left: 0
-        right: 0
-        margin: 20px 30px
-
     .centerTitle
         margin: 30px 30px
         display: flex
@@ -120,11 +111,12 @@
         align-items: start
         z-index: 1
 
-
     .logo
+        max-width: 68% !important
         width: 68% !important
 
     .logo-white
+        max-width: 68% !important
         width: 68% !important
 
     .mobile-none
