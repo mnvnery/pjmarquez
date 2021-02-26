@@ -79,7 +79,28 @@
 #rightImages
     display: none
 
+.mobile-flex
+    display: none
+
 @media screen and(max-width: 600px)
+    #topNav
+        display: flex
+        flex-direction: row
+        font-size: 5.5vw
+        bottom: 0
+
+    #topNav a
+        margin-bottom: 0
+    
+    .photoLink, .cinemaLink
+
+
+    .mobile-flex
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 100vh
+
     .leftSide, .rightSide
         display: none
 
@@ -126,4 +147,5 @@
         display: inline-block
         width: 24px !important
 
-
+    #mobileImagem
+        width: 85%

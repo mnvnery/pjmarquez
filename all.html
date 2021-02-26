@@ -22,7 +22,7 @@ layout: default
         {% for photo in site.photo reversed %}
         <li class="item" data-image="{{ site.baseurl }}/{{ photo.thumbnail }}">{{ photo.title }}</li>
         {% endfor %}
-        {% for cinema in site.cinema reversed %}
+        {% for cinema in site.cinema %}
         <li class="cinemaitem" data-image="{{ site.baseurl }}/{{ cinema.main_image }}">{{ cinema.title }}</li>
         {% endfor %}
     </ul>
