@@ -11,11 +11,15 @@ layout: default
     </div>
 
     <!-- Content -->
-
+   
     
-    <div class="topNav">
-        <a href="{{ site.baseurl }}/photo">PHOTO</a>
-        <a href="{{ site.baseurl }}/cinema">CINEMA</a>
+    <div class="topNav" id="topNav">
+        <a class='photoLink' href="{{ site.baseurl }}/photo">PHOTO</a>
+        <a class='cinemaLink' href="{{ site.baseurl }}/cinema">CINEMA</a>
+    </div>
+
+    <div class="mobile-flex">
+        <img id="mobileImagem" alt="" src="{{ site.baseurl }}/assets/img/1_fotocopia.jpg">
     </div>
 
     <div class="leftSide">
@@ -27,7 +31,7 @@ layout: default
 
     <div class="centerTitle">
         <img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo">
-        <img src="{{ site.baseurl }}/assets/img/logo-white.svg" alt="logo-white" class="logo-white mobile-none">
+        <img src="{{ site.baseurl }}/assets/img/logo-white.svg" alt="logo-white" class="logo-white">
         <img src="{{ site.baseurl }}/assets/img/menu.svg" alt="menu icon" class="menu-icon">
     </div>
     <div class="bottomNav">
@@ -57,6 +61,46 @@ layout: default
             $('#leftImages').hide();
         });
     }
+    
+    function oddOrEven(num) {
+        return num % 2
+    }
 
 
+
+    const mobileQuery = window.matchMedia("(max-width: 600px)")
+    if (mobileQuery.matches) {
+        var arrayCombined = $.map(imageRight, function(v, i) {
+        return [v, imageLeft[i]];
+        });
+        console.log(arrayCombined.length);
+
+        var thisId=0
+
+        window.setInterval(function(){
+            $('#mobileImagem').attr('src',arrayCombined[thisId]);
+            thisId++; //increment data array id
+            if (thisId==arrayCombined.length) thisId=0;
+            if (oddOrEven(thisId)== 0){
+                $('.cinemaLink').css('opacity', '0.3');
+                $('.photoLink').css('opacity', '1');
+                $('a').css('color', 'black');
+                $('body').css('color', 'black');
+                $('body').css('background-color', 'white');
+                $('.logo-white').hide();
+                $('.logo').show();
+            } 
+            if (oddOrEven(thisId)== 1){
+                $('.photoLink').css('opacity', '0.3');
+                $('.cinemaLink').css('opacity', '1');
+                $('a').css('color', 'white');
+                $('body').css('color', 'white');
+                $('body').css('background-color', 'black');
+                $('.logo').hide();
+                $('.logo-white').show();
+                
+            }
+        },5000);    
+        
+    }
 </script>
