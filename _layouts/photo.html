@@ -22,9 +22,9 @@ layout: default
 <div class="topNav">
     {% for photo in site.photo reversed %}
     {% if photo.title == page.title %}
-        <a href="{{ site.baseurl }}/{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
+        <a href="{{ site.baseurl }}{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
     {% else %}
-        <a href="{{ site.baseurl }}/{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
+        <a href="{{ site.baseurl }}{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
     {% endif %}
     {% endfor %}
 </div>
