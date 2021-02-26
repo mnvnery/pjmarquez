@@ -17,6 +17,7 @@
   const sizeY = imageRight.length
   const y = Math.floor(sizeY*Math.random())
   
+
   $(document).ready(function(){
     $('#leftImages').attr('src',imageLeft[x]);
     $('#rightImages').attr('src',imageRight[y]);
