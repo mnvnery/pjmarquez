@@ -5,9 +5,9 @@ layout: default
     <!-- Sidebar -->
     <div id="mySidebar">
         <img src="{{ site.baseurl }}/assets/img/close.svg" alt="menu icon" class="close-icon">
-        <a href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
-        <a href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
-        <a href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>   
+            <a class="sidebar-link" href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
+            <a class="sidebar-link" href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
+            <a class="sidebar-link" href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>   
     </div>
 
     <!-- Content -->
@@ -100,7 +100,7 @@ layout: default
             if (oddOrEven(thisId)== 1){
                 $('.photoLink').css('opacity', '0.3');
                 $('.cinemaLink').css('opacity', '1');
-                $('a').css('color', 'white');
+                $('#topNav a').css('color', 'white');
                 $('body').css('color', 'white');
                 $('body').css('background-color', 'black');
                 $('.logo').hide();
