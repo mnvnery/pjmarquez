@@ -31,8 +31,9 @@ layout: default
 
     <div class="centerTitle">
         <img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo">
-        <img src="{{ site.baseurl }}/assets/img/logo-white.svg" alt="logo-white" class="logo-white">
+        <img src="{{ site.baseurl }}/assets/img/logo-white.svg" alt="logo-white" id="logo-white" class="logo-white">
         <img src="{{ site.baseurl }}/assets/img/menu.svg" alt="menu icon" class="menu-icon">
+        <img src="{{ site.baseurl }}/assets/img/menu-white.svg" alt="menu icon" id="menu-white" class="menu-icon">
     </div>
     <div class="bottomNav">
         <a href="{{ site.baseurl }}/about">ABOUT</a>
@@ -75,20 +76,26 @@ layout: default
         });
         console.log(arrayCombined.length);
 
-        var thisId=0
+        var thisId=2
+        
+        $( document ).ready(function() {
+            $('#mobileImagem').attr('src',arrayCombined[1]);
+        });
 
         window.setInterval(function(){
             $('#mobileImagem').attr('src',arrayCombined[thisId]);
             thisId++; //increment data array id
-            if (thisId==arrayCombined.length) thisId=0;
+            if (thisId==arrayCombined.length) thisId=1;
             if (oddOrEven(thisId)== 0){
                 $('.cinemaLink').css('opacity', '0.3');
                 $('.photoLink').css('opacity', '1');
                 $('a').css('color', 'black');
                 $('body').css('color', 'black');
                 $('body').css('background-color', 'white');
-                $('.logo-white').hide();
+                $('#logo-white').hide();
                 $('.logo').show();
+                $('#menu-white').hide();
+                $('.menu').show();
             } 
             if (oddOrEven(thisId)== 1){
                 $('.photoLink').css('opacity', '0.3');
@@ -97,10 +104,12 @@ layout: default
                 $('body').css('color', 'white');
                 $('body').css('background-color', 'black');
                 $('.logo').hide();
-                $('.logo-white').show();
-                
+                $('#logo-white').show();
+                $('#menu-white').show();
+                $('.menu').hide();
             }
         },5000);    
         
     }
+
 </script>
