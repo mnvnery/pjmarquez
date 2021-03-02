@@ -11,18 +11,12 @@ layout: default
     </div>
 
     <!-- Content -->
-    <!-- Slider main container -->
-<div class="swiper-container">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-    <!-- Slides -->
 
+    <div class="main-carousel">
+        <div class="carousel-cell">Slide 1</div>
+        <div class="carousel-cell">Slide 2</div>
+        <div class="carousel-cell">Slide 3</div>
     </div>
-    <!-- If we need pagination -->
-    <div class="swiper-pagination"></div>
-
-
-</div>
     
     <div class="topNav" id="topNav">
         <a class='photoLink' href="{{ site.baseurl }}/photo">PHOTO</a>
@@ -53,9 +47,9 @@ layout: default
         <a href="{{ site.baseurl }}/all">ALL</a>
     </div>
 
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script>
     const mediaQuery = window.matchMedia("(min-width: 600px)")
     if (mediaQuery.matches) {
@@ -93,27 +87,25 @@ layout: default
 
 
         var thisId=2
-
+/*
         $(document).ready(function(){
             $.each(arrayCombined, function(index, value){
                 swiper.appendSlide(`<div class="swiper-slide"><img src="${value}"></div>`);
             });
         });
+    
+*/
+    
     }
 
+    
 </script>
 
 <script>
-const swiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-    el: '.swiper-pagination',
-    },
-
-});
+        $('.main-carousel').flickity({
+        // options
+        cellAlign: 'left',
+        contain: true
+        });
 </script>
-
 
