@@ -11,16 +11,33 @@ layout: default
     </div>
 
     <!-- Content -->
-   
+    <!-- Slider main container -->
+<div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+    <!-- Slides -->
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+</div>
     
     <div class="topNav" id="topNav">
         <a class='photoLink' href="{{ site.baseurl }}/photo">PHOTO</a>
         <a class='cinemaLink' href="{{ site.baseurl }}/cinema">CINEMA</a>
     </div>
 
+    <!--
     <div class="mobile-flex">
         <img id="mobileImagem" alt="" src="{{ site.baseurl }}/assets/img/1_fotocopia.jpg">
     </div>
+    -->
 
     <div class="leftSide">
         <img id="leftImages" alt="#" class="indeximg">
@@ -40,6 +57,9 @@ layout: default
         <a href="{{ site.baseurl }}/all">ALL</a>
     </div>
 
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
 <script>
     const mediaQuery = window.matchMedia("(min-width: 600px)")
     if (mediaQuery.matches) {
@@ -74,42 +94,33 @@ layout: default
         var arrayCombined = $.map(imageRight, function(v, i) {
         return [v, imageLeft[i]];
         });
-        console.log(arrayCombined.length);
+
 
         var thisId=2
-        
-        $( document ).ready(function() {
-            $('#mobileImagem').attr('src',arrayCombined[1]);
-        });
 
-        window.setInterval(function(){
-            $('#mobileImagem').attr('src',arrayCombined[thisId]);
-            thisId++; //increment data array id
-            if (thisId==arrayCombined.length) thisId=1;
-            if (oddOrEven(thisId)== 0){
-                $('.cinemaLink').css('opacity', '0.3');
-                $('.photoLink').css('opacity', '1');
-                $('a').css('color', 'black');
-                $('body').css('color', 'black');
-                $('body').css('background-color', 'white');
-                $('#logo-white').hide();
-                $('.logo').show();
-                $('#menu-white').hide();
-                $('.menu').show();
-            } 
-            if (oddOrEven(thisId)== 1){
-                $('.photoLink').css('opacity', '0.3');
-                $('.cinemaLink').css('opacity', '1');
-                $('#topNav a').css('color', 'white');
-                $('body').css('color', 'white');
-                $('body').css('background-color', 'black');
-                $('.logo').hide();
-                $('#logo-white').show();
-                $('#menu-white').show();
-                $('.menu').hide();
-            }
-        },5000);    
-        
+        $(document).ready(function(){
+            $.each(arrayCombined, function(index, value){
+                swiper.appendSlide(`<div class="swiper-slide"><img src="${value}"></div>`);
+            });
+        });
     }
 
 </script>
+
+<script>
+const swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+    el: '.swiper-pagination',
+    },
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+    },
+});
+</script>
+
+

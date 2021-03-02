@@ -1,0 +1,23 @@
+{
+  "name": "pjmarquez",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "swiper": "^6.4.15"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnvnery/pjmarquez.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mnvnery/pjmarquez/issues"
+  },
+  "homepage": "https://github.com/mnvnery/pjmarquez#readme"
+}
