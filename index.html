@@ -37,10 +37,8 @@ layout: default
         <img src="{{ site.baseurl }}/assets/img/menu-white.svg" alt="menu icon" id="menu-white" class="menu-icon">
     </div>
 
-    <div class="main-carousel">
-        <div class="carousel-cell">Slide 1</div>
-        <div class="carousel-cell">Slide 2</div>
-        <div class="carousel-cell">Slide 3</div>
+    <div class="main-carousel mobile">
+
     </div>
     
     <div class="bottomNav">
@@ -51,6 +49,33 @@ layout: default
 
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+    var $carousel = $('.main-carousel').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true,
+    pageDots: false,
+    wrapAround: true,
+    prevNextButtons: false,
+    autoPlay: 5000
+    });
+
+    var flkty = new Flickity('.main-carousel');
+    var selectedIndex = flkty.selectedIndex;
+
+    $carousel.on( 'settle.flickity', function() {
+    if ( flkty.selectedIndex !== selectedIndex ) {
+
+       // console.log('settled at new cell', flkty.selectedIndex);
+        selectedIndex = flkty.selectedIndex;
+
+        // do stuff
+
+    }
+    });
+</script>
+
 <script>
     const mediaQuery = window.matchMedia("(min-width: 600px)")
     if (mediaQuery.matches) {
@@ -74,8 +99,11 @@ layout: default
         });
     }
     
-    function oddOrEven(num) {
-        return num % 2
+    function isEven(num) {
+        if (num%2 == 0)
+            return "class='cinema'";
+        else
+            return "class='photo'";
     }
 
 
@@ -86,27 +114,16 @@ layout: default
         return [v, imageLeft[i]];
         });
 
-
-        var thisId=2
-/*
         $(document).ready(function(){
             $.each(arrayCombined, function(index, value){
-                swiper.appendSlide(`<div class="swiper-slide"><img src="${value}"></div>`);
+                const $cellElems = $(`<div class="carousel-cell"><img src="${value}" ${isEven(index)}></div>`);
+                $carousel.flickity( 'append', $cellElems );
             });
         });
-    
-*/
-    
     }
 
-    
+
 </script>
 
-<script>
-        $('.main-carousel').flickity({
-        // options
-        cellAlign: 'left',
-        contain: true
-        });
-</script>
+
 
