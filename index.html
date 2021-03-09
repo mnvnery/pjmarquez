@@ -58,7 +58,8 @@ layout: default
     pageDots: false,
     wrapAround: true,
     prevNextButtons: false,
-    autoPlay: 5000
+    autoPlay: 5000,
+    lazyLoad: true
     });
 
     var flkty = new Flickity('.main-carousel');
@@ -116,7 +117,7 @@ layout: default
 
         $(document).ready(function(){
             $.each(arrayCombined, function(index, value){
-                const $cellElems = $(`<div class="carousel-cell"><img src="${value}" ${isEven(index)}></div>`);
+                const $cellElems = $(`<div class="carousel-cell"><img data-flickity-lazyload="${value}"></div>`);
                 $carousel.flickity( 'append', $cellElems );
             });
         });
