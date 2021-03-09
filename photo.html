@@ -32,41 +32,16 @@ layout: default
     <a href="{{ site.baseurl }}/cinema" style="opacity: 0.3;">CINEMA</a>
 </div>
 -->
-
-<div class="projectImages">
-    <div id="carouselExampleControls" class="carousel slide" data-interval='false' data-touch="true" data-ride="carousel">
-        <div class="carousel-inner">
-            {% for photo in site.photo %}
-            {% if photo.mainProject == true %}
-                {% for item in photo.images %}
-                {% if forloop.first %}
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                            <img class="carousel-img" src="{{ site.baseurl }}/{{ item }}"/>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                            <img class="carousel-img" src="{{ site.baseurl }}/{{ item }}"/>
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            {% endfor %}
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-
+<div class="photo-carousel">
+    {% for photo in site.photo %}
+    {% if photo.mainProject == true %}
+        {% for item in photo.images %}
+        <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
+        {% endfor %}
+    {% endif %}
+    {% endfor %}
 </div>
+
 
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
@@ -89,10 +64,21 @@ layout: default
      responsiveFallback: false        // You can fallback to normal page scroll by defining the width of the browser in which
                                       // you want the responsive fallback to be triggered. For example, set this to 600 and whenever
                                       // the browser's width is less than 600, the fallback will kick in.
-  });
+});
 
+</script>
 
-    
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+<script>
+    $('.photo-carousel').flickity({
+    // options
+    cellAlign: 'center',
+    contain: true,
+    pageDots: false,
+    wrapAround: true,
+    prevNextButtons: true,
+    autoPlay: 5000
+    });
 
-  </script>
+</script>
