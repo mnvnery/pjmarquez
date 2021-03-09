@@ -15,15 +15,13 @@ layout: default
     <img src="" class="thumbnail-img-cinema">
 </div>
 
-<div class="centerList">
-  
-    
+<div class="centerList">      
     <ul>
         {% for photo in site.photo reversed %}
-        <li class="item" data-image="{{ site.baseurl }}/{{ photo.thumbnail }}">{{ photo.title }}</li>
+        <a href="{{ site.baseurl }}{{ photo.url }}"><li class="item" data-image="{{ site.baseurl }}/{{ photo.thumbnail }}">{{ photo.title }}</li></a>
         {% endfor %}
         {% for cinema in site.cinema %}
-        <li class="cinemaitem" data-image="{{ site.baseurl }}/{{ cinema.main_image }}">{{ cinema.title }}</li>
+        <a href="{{ site.baseurl}}{{ cinema.url }}"><li class="cinemaitem" data-image="{{ site.baseurl }}/{{ cinema.main_image }}">{{ cinema.title }}</li></a>
         {% endfor %}
     </ul>
 </div>
