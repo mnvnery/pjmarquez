@@ -2,7 +2,6 @@
 layout: default
 ---
 <div id="mySidebar">
-    <img src="{{ site.baseurl }}/assets/img/close.svg" alt="menu icon" class="close-icon">
     <a href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
     <a href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
     <a href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>
@@ -10,9 +9,13 @@ layout: default
 
 <div class="navigation">
     <a href="{{ site.baseurl }}/index"><img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo"></a>
-    <img src="{{ site.baseurl }}/assets/img/menu.svg" alt="menu icon" class="menu-icon">
 </div>
 
+<button class="hamburger hamburger--squeeze navigation" type="button" style="outline:none">
+    <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+    </span>
+</button>
 
 
 

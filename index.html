@@ -2,9 +2,11 @@
 layout: default
 
 ---
+
+
+
     <!-- Sidebar -->
     <div id="mySidebar">
-        <img src="{{ site.baseurl }}/assets/img/close.svg" alt="menu icon" class="close-icon">
             <a class="sidebar-link" href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
             <a class="sidebar-link" href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
             <a class="sidebar-link" href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>   
@@ -33,8 +35,11 @@ layout: default
     <div class="centerTitle">
         <a href="{{ site.baseurl }}/index" style="display: contents;"><img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo"></a>
         <img src="{{ site.baseurl }}/assets/img/logo-white.svg" alt="logo-white" id="logo-white" class="logo-white">
-        <img src="{{ site.baseurl }}/assets/img/menu.svg" alt="menu icon" class="menu-icon">
-        <img src="{{ site.baseurl }}/assets/img/menu-white.svg" alt="menu icon" id="menu-white" class="menu-icon">
+        <button class="hamburger hamburger--squeeze" type="button" style="outline:none">
+            <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </div>
 
     <div class="main-carousel mobile">
@@ -63,22 +68,11 @@ layout: default
     lazyLoad: true
     });
 
-    var flkty = new Flickity('.main-carousel');
-    var selectedIndex = flkty.selectedIndex;
-
-    $carousel.on( 'settle.flickity', function() {
-    if ( flkty.selectedIndex !== selectedIndex ) {
-
-       // console.log('settled at new cell', flkty.selectedIndex);
-        selectedIndex = flkty.selectedIndex;
-
-        // do stuff
-
-    }
-    });
 </script>
 
 <script>
+
+
     const mediaQuery = window.matchMedia("(min-width: 600px)")
     if (mediaQuery.matches) {
         $( ".leftSide" ).mouseover(function() { 
@@ -101,15 +95,6 @@ layout: default
         });
     }
     
-    function isEven(num) {
-        if (num%2 == 0)
-            return "class='cinema'";
-        else
-            return "class='photo'";
-    }
-
-
-
     const mobileQuery = window.matchMedia("(max-width: 600px)")
     if (mobileQuery.matches) {
         var arrayCombined = $.map(imageRight, function(v, i) {
