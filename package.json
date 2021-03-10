@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "hamburgers": "^1.1.3",
     "swiper": "^6.4.15"
   },
   "devDependencies": {},
