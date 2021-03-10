@@ -47,14 +47,14 @@ layout: default
     items.forEach((el) => {
       el.addEventListener('mouseover', (e) => {
         imageData = e.target.getAttribute('data-image')
-        e.target.style.zIndex = 99
+        // e.target.style.zIndex = 99
         image.setAttribute('src', imageData)
         document.body.style.backgroundColor = "white";
         document.body.style.color = "black";
         $('a').css('color', 'black');
       })
       el.addEventListener('mouseleave', (e) => {
-        e.target.style.zIndex = 1
+        //e.target.style.zIndex = 1
         image.setAttribute('src', '')
       })
     })
@@ -62,7 +62,7 @@ layout: default
     cinemaitems.forEach((x) => {
       x.addEventListener('mouseover', (e) => {
         imageData = e.target.getAttribute('data-image')
-        e.target.style.zIndex = 99
+        //e.target.style.zIndex = 99
         cinemaimage.setAttribute('src', imageData)
         document.body.style.backgroundColor = "black";
         document.body.style.color = "white";
@@ -70,7 +70,7 @@ layout: default
 
       })
       x.addEventListener('mouseleave', (e) => {
-        e.target.style.zIndex = 1
+        //e.target.style.zIndex = 1
         cinemaimage.setAttribute('src', '')
       })
     })
