@@ -57,8 +57,24 @@
     position: fixed
     top: 0
     right: 0
-    margin: 20px 15px
-    font-size: 1.2em
+    width: 1.8vw
+    height: 1.2vw
+    margin: 1.17vw 1.5vw
+    
+.exitbtn:before, .exitbtn:after
+    position: absolute
+    left: 15px
+    content: ' '
+    height: 25px
+    width: 2px
+    background-color: #fff
+
+.exitbtn:before
+    transform: rotate(45deg)
+
+.exitbtn:after
+    transform: rotate(-45deg)
+
 
 .trailer-container
     display: flex
@@ -106,3 +122,8 @@
         .hamburger.is-active .hamburger-inner, .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
             background-color: white
 
+    .exitbtn
+        margin: 30px 30px
+        width: 30px
+        height: 30px
+        
