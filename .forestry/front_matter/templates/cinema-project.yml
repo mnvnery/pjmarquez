@@ -35,7 +35,8 @@ fields:
 - name: date
   type: datetime
   label: Date
-  description: Use this date to order the files
+  description: Date is used to <strong>order</strong> the files. The more <strong>recent
+    </strong>the date, the higher up the project shows up on the list.
   config:
     required: false
     date_format: 
