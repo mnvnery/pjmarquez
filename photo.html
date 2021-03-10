@@ -20,12 +20,12 @@ layout: default
 
 
 <div class="topNav">
-    {% for photo in site.photo reversed %}
-    {% if photo.mainProject == true %}
-        <a href="{{ site.baseurl }}{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
-    {% else %}
-        <a href="{{ site.baseurl }}{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
-    {% endif %}
+    {% assign tests = site.photo | reverse %}
+    {% for test in tests limit:1  %}
+        <a href="{{ site.baseurl }}{{ test.url }}" class="activeLink">{{ test.title }}</a>
+    {% endfor %}
+    {% for test in tests offset:1 %}
+        <a href="{{ site.baseurl }}{{ test.url }}" class="photoLinks">{{ test.title }}</a>
     {% endfor %}
 </div>
 
@@ -37,12 +37,10 @@ layout: default
 -->
 
 <div class="photo-carousel">
-    {% for photo in site.photo %}
-    {% if photo.mainProject == true %}
-        {% for item in photo.images %}
+    {% for test in tests limit:1 %}
+        {% for item in test.images %}
         <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
         {% endfor %}
-    {% endif %}
     {% endfor %}
 </div>
 
