@@ -2,16 +2,19 @@
 layout: default
 ---
 <div id="mySidebar">
-    <img src="{{ site.baseurl }}/assets/img/close.svg" alt="menu icon" class="close-icon">
     <a href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
     <a href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
     <a href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>
 </div>
 
 <div class="navigation">
-    <a href="{{ site.baseurl }}/index"><img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo"></a>
     <img src="{{ site.baseurl }}/assets/img/menu.svg" alt="menu icon" class="menu-icon">
 </div>
+<button class="hamburger hamburger--squeeze navigation" type="button" style="outline:none">
+    <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+    </span>
+</button>
 
 <div class="topNav">
     {% for photo in site.photo reversed %}
@@ -30,37 +33,6 @@ layout: default
 </div>
 
 
-<!--
-<div class="projectImages">
-    <div id="carouselExampleControls" class="carousel slide" data-interval='false' data-touch="true" data-ride="carousel">
-        <div class="carousel-inner">
-            {% for item in page.images %}
-            {% if forloop.first %}
-                <div class="carousel-item active">
-                    <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                        <img class="carousel-img" src="{{ site.baseurl }}/{{ item }}"/>
-                    </div>
-                </div>
-                {% else %}
-                <div class="carousel-item">
-                    <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                        <img class="carousel-img" src="{{ site.baseurl }}/{{ item }}"/>
-                    </div>
-                </div>
-                {% endif %}
-            {% endfor %}
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
--->
 
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
