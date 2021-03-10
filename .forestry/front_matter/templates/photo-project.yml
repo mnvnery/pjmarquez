@@ -10,11 +10,6 @@ fields:
 - type: text
   name: title
   label: Project Title
-- type: boolean
-  name: mainProject
-  label: Is this the main project?
-  description: The main project is the one that appears when we first click PHOTO.
-    There can only be one selected
 - type: image_gallery
   name: images
   label: All images
@@ -24,6 +19,11 @@ fields:
     maxSize: 64
   label: Thumbnail
   description: Image to show up on All page when hovering title
+- type: boolean
+  name: mainProject
+  label: Is this the main project?
+  description: The main project is the one that appears when we first click PHOTO.
+    There can only be one selected
 - name: date
   type: datetime
   label: Date
