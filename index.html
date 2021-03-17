@@ -25,10 +25,10 @@ cinema_image: assets/img/ultimafloresta.jpg
     -->
 
     <div class="leftSide">
-        <img id="leftImages" alt="#" class="indeximg">
+        <img id="leftImages" src="{{ site.baseurl }}/{{ page.photo_image }}" alt="photoimage" class="indeximg">
     </div>
     <div class="rightSide">
-        <img id="rightImages" alt="#" class="indeximg">
+        <img id="rightImages" src="{{ site.baseurl }}/{{ page.cinema_image }}" alt="cinemaimage" class="indeximg">
     </div>
 
     <div class="centerTitle">
@@ -80,8 +80,6 @@ cinema_image: assets/img/ultimafloresta.jpg
             $('.centerTitle').css('background-color', 'white');
             $('.logo-white').hide();
             $('.logo').show();
-            const imageL = randomLeft();
-            $('#leftImages').attr('src', imageL);
             $('#leftImages').show();
             $('#rightImages').hide();
         });
@@ -91,8 +89,6 @@ cinema_image: assets/img/ultimafloresta.jpg
             $('.centerTitle').css('background-color', 'black');
             $('.logo').hide();
             $('.logo-white').show();
-            const imageR = randomRight();
-            $('#rightImages').attr('src',imageR);
             $('#rightImages').show();
             $('#leftImages').hide();
         });
