@@ -21,12 +21,12 @@ sections:
 - type: heading
   label: Pages
 - type: document
-  path: about.html
-  label: About Page
-- type: document
   path: index.html
   label: Home
   match: "**/*"
+- type: document
+  path: about.html
+  label: About Page
 upload_dir: assets/img
 public_path: assets/img
 front_matter_path: ''
