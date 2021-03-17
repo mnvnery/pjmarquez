@@ -28,6 +28,16 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: project_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+    max: 850
+  label: Project Description
 pages:
 - _photo/dreams-that-money-can-buy.html
 - _photo/fotocopia.html
