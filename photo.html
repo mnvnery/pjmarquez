@@ -62,8 +62,15 @@ layout: default
     pageDots: false,
     wrapAround: true,
     prevNextButtons: true,
-    autoPlay: 5000,
-    fade: true
+
     });
+
+    const mediaQuery = window.matchMedia("(min-width: 600px)")
+    if (mediaQuery.matches) {
+        $('.photo-carousel').flickity({
+        autoPlay: 5000,
+        fade: true,
+        });
+    }   
 
 </script>
