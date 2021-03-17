@@ -1,4 +1,16 @@
 ---
 label: Home Page
 hide_body: true
-fields: []
+fields:
+- name: photo_image
+  type: file
+  config:
+    maxSize: 64
+  label: 'Photo Image '
+  description: Image for the PHOTO side
+- name: cinema_image
+  type: file
+  config:
+    maxSize: 64
+  label: Cinema Image
+  description: Image for the CINEMA side
