@@ -7,20 +7,22 @@
     imageLeft.push("{{ item }}")
     {% endfor %}
   {% endfor %}
-  const size = imageLeft.length
-  const x = Math.floor(size*Math.random())
-  
+
+  function randomLeft() {
+    const x = Math.floor(imageLeft.length * Math.random())
+    return imageLeft[x]
+  }
+
   const imageRight = new Array ();
   {% for cinema in site.cinema %}
     imageRight.push("{{ cinema.main_image }}")
   {% endfor %}
-  const sizeY = imageRight.length
-  const y = Math.floor(sizeY*Math.random())
   
 
-  $(document).ready(function(){
-    $('#leftImages').attr('src',imageLeft[x]);
-    $('#rightImages').attr('src',imageRight[y]);
-  });
+  function randomRight() {
+    const y = Math.floor(imageRight.length * Math.random())
+    return imageRight[y]
+  }
+
 
 
