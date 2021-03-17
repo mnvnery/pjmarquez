@@ -36,7 +36,7 @@ fields:
     wysiwyg: true
     schema:
       format: markdown
-    max: 850
+    max: 1000
   label: Project Description
 pages:
 - _photo/dreams-that-money-can-buy.html
