@@ -22,7 +22,7 @@ sections:
   label: Pages
 - type: document
   path: index.html
-  label: Home
+  label: Home Page
 - type: document
   path: about.html
   label: About Page
