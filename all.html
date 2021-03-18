@@ -2,7 +2,7 @@
 layout: default
 
 ---
-<div class="topNav">
+<div class="topNav" style="margin: 1.17vw 1.5vw 0vw 1.5vw ">
     <a href="{{ site.baseurl }}/photo">PHOTO</a>
     <a href="{{ site.baseurl }}/cinema">CINEMA</a>
 </div>
@@ -15,7 +15,8 @@ layout: default
     <img src="" class="thumbnail-img-cinema">
 </div>
 
-<div class="centerList">      
+<div class="centerList">  
+  <div></div>    
     <ul>
         {% for photo in site.photo reversed %}
         <a href="{{ site.baseurl }}{{ photo.url }}"><li class="item" data-image="{{ site.baseurl }}/{{ photo.thumbnail }}">{{ photo.title }}</li></a>
@@ -24,6 +25,7 @@ layout: default
         <a href="{{ site.baseurl}}{{ cinema.url }}"><li class="cinemaitem" data-image="{{ site.baseurl }}/{{ cinema.main_image }}">{{ cinema.title }}</li></a>
         {% endfor %}
     </ul>
+    <div></div>
 </div>
 
 
@@ -32,7 +34,7 @@ layout: default
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
     <a href="{{ site.baseurl }}/index">PEDRO J. MÁRQUEZ</a>
-    <a href="{{ site.baseurl }}/all">ALL</a>
+    <a href="{{ site.baseurl }}/all" class="all">ALL</a>
 </div>
 
 <script>
