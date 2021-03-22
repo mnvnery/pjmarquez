@@ -10,14 +10,15 @@ fields:
 - type: text
   name: title
   label: Project Title
-- type: boolean
-  name: mainProject
-  label: Is this the main project?
-  description: The main project is the one that appears when we first click PHOTO.
-    There can only be one selected
 - type: image_gallery
   name: images
   label: All images
+- name: thumbnail
+  type: file
+  config:
+    maxSize: 64
+  label: Thumbnail
+  description: Image to show up on All page when hovering title
 - name: date
   type: datetime
   label: Date
@@ -27,8 +28,19 @@ fields:
     date_format: 
     time_format: 
     display_utc: false
+- name: project_description
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: true
+    schema:
+      format: markdown
+    max: 600
+  label: Project Description
 pages:
+- _photo/dreams-that-money-can-buy.html
 - _photo/fotocopia.html
 - _photo/idols.html
 - _photo/overtherainbow.html
-- _photo/tropicus.html
+- _photo/tropicos-utopicos.html

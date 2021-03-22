@@ -1,55 +1,82 @@
 ---
 layout: default
 ---
+<div id="mySidebar">
+    <a href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
+    <a href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
+    <a href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>
+</div>
+
+<div class="navigation">
+    <a href="{{ site.baseurl }}/index"><img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo"></a>
+</div>
+
+<button class="hamburger hamburger--squeeze navigation" type="button" style="outline:none">
+    <span class="hamburger-box">
+    <span class="hamburger-inner"></span>
+    </span>
+</button>
+
+
 
 <div class="topNav">
-    {% for photo in site.photo reversed %}
-    {% if photo.mainProject == true %}
-        <a href="{{ photo.url }}" class="activeLink">{{ photo.title }}</a>
-    {% else %}
-        <a href="{{ photo.url }}" class="photoLinks">{{ photo.title }}</a>
-    {% endif %}
+    {% assign tests = site.photo | reverse %}
+    {% for test in tests limit:1  %}
+        <a href="{{ site.baseurl }}{{ test.url }}" class="activeLink">{{ test.title }}</a>
+    {% endfor %}
+    {% for test in tests offset:1 %}
+        <a href="{{ site.baseurl }}{{ test.url }}" class="photoLinks">{{ test.title }}</a>
     {% endfor %}
 </div>
 
+<!--
+<div class="nav-mobile">
+    <a href="{{ site.baseurl }}/photo">PHOTO</a>
+    <a href="{{ site.baseurl }}/cinema" style="opacity: 0.3;">CINEMA</a>
+</div>
+-->
 
-<div class="projectImages">
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            {% for photo in site.photo %}
-            {% if photo.mainProject == true %}
-                {% for item in photo.images %}
-                {% if forloop.first %}
-                    <div class="carousel-item active">
-                        <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                            <img src="{{ site.baseurl }}/{{ item }}"/>
-                        </div>
-                    </div>
-                    {% else %}
-                    <div class="carousel-item">
-                        <div class="d-flex justify-content-center align-items-center w-100 h-100">
-                            <img src="{{ site.baseurl }}/{{ item }}"/>
-                        </div>
-                    </div>
-                    {% endif %}
-                {% endfor %}
-            {% endif %}
-            {% endfor %}
+<div class="photo-carousel">
+    {% for test in tests limit:1 %}
+        {% for item in test.images %}
+        <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
+        {% endfor %}
+        {% if test.project_description %}
+        <div class="carousel-cell">
+            <div class="projectText">{{test.project_description}}</div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
+        {% endif %}
+    {% endfor %}
 
 </div>
 
 <div class="bottomNav">
     <a href="{{ site.baseurl }}/about">ABOUT</a>
     <a href="{{ site.baseurl }}/index">PEDRO J. MÁRQUEZ</a>
-    <a href="{{ site.baseurl }}/all">ALL</a>
+    <a href="{{ site.baseurl }}/all" class="all">ALL</a>
 </div>
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+
+<script>
+    $('.photo-carousel').flickity({
+    // options
+    cellAlign: 'center',
+    contain: true,
+    pageDots: false,
+    wrapAround: true,
+    prevNextButtons: true,
+
+    });
+
+    const mediaQuery = window.matchMedia("(min-width: 600px)")
+    if (mediaQuery.matches) {
+        $('.photo-carousel').flickity({
+        autoPlay: 5000,
+        fade: true,
+        });
+    }   
+
+</script>

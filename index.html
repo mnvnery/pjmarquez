@@ -1,19 +1,140 @@
 ---
 layout: default
+photo_image: assets/img/1_fotocopia.jpg
+cinema_image: assets/img/winds.jpg
+photo_images:
+- assets/img/dscf6747-3-2-copy.jpg
+- assets/img/2-2.jpg
+- assets/img/1_fotocopia.jpg
+cinema_images:
+- assets/img/1.png
+- assets/img/arcoirislola.jpg
+- assets/img/winds.jpg
+mobile_images:
+- assets/img/2_tropicos.jpg
+- assets/img/4.png
+- assets/img/2.jpg
+- assets/img/sauras.jpg
+- assets/img/3_rainbow.jpg
+- assets/img/lupin.jpg
+- assets/img/1_rainbow.jpg
 
 ---
-   <!-- For when we start the interactions 
-    <div class="leftSide"></div>
-    <div class="rightSide"></div>
+<!-- Sidebar -->
+    <div id="mySidebar">
+            <a class="sidebar-link" href="{{ site.baseurl }}/about"><p>ABOUT</p></a>
+            <a class="sidebar-link" href="{{ site.baseurl }}/photo"><p>PHOTO</p></a>
+            <a class="sidebar-link" href="{{ site.baseurl }}/cinema"><p>CINEMA</p></a>   
+    </div>
+
+    <!-- Content -->
+
+    <div class="topNav" id="topNav">
+        <a class='photoLink' href="{{ site.baseurl }}/photo">PHOTO</a>
+        <a class='cinemaLink' href="{{ site.baseurl }}/cinema">CINEMA</a>
+    </div>
+
+    <!--
+    <div class="mobile-flex">
+        <img id="mobileImagem" alt="" src="{{ site.baseurl }}/assets/img/1_fotocopia.jpg">
+    </div>
     -->
-    <div class="topNav">
-        <a href="{{ site.baseurl }}/photo">PHOTO</a>
-        <a href="{{ site.baseurl }}/cinema">CINEMA</a>
+
+    <div class="leftSide">
+        <img id="leftImages" alt="photoimage" class="indeximg">
     </div>
+    <div class="rightSide">
+        <img id="rightImages" alt="cinemaimage" class="indeximg">
+    </div>
+
     <div class="centerTitle">
-        PEDRO J. MÁRQUEZ
+        <a href="{{ site.baseurl }}/index" style="display: contents;"><img src="{{ site.baseurl }}/assets/img/logo.svg" alt="logo" class="logo"></a>
+        <img src="{{ site.baseurl }}/assets/img/logo-white.svg" alt="logo-white" id="logo-white" class="logo-white">
+        <button class="hamburger hamburger--squeeze index" type="button" style="outline:none">
+            <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </div>
+
+    <div class="main-carousel mobile">
+        {% for item in page.mobile_images %}
+        <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
+        {% endfor%}
+    </div>
+
+    
     <div class="bottomNav">
         <a href="{{ site.baseurl }}/about">ABOUT</a>
-        <a href="{{ site.baseurl }}/all">ALL</a>
+        <a href=""></a>
+        <a href="{{ site.baseurl }}/all" class="all">ALL</a>
     </div>
+
+
+
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+<script>
+    var $carousel = $('.main-carousel').flickity({
+    // options
+    cellAlign: 'left',
+    contain: true,
+    pageDots: false,
+    wrapAround: true,
+    prevNextButtons: false,
+    autoPlay: 5000,
+    lazyLoad: true
+    });
+
+</script>
+
+<script>
+const imageLeft = new Array ();
+
+    {% for item in page.photo_images %}
+    imageLeft.push("{{ item }}")
+    {% endfor %}
+    const size = imageLeft.length
+    const x = Math.floor(size*Math.random())
+
+    const imageRight = new Array ();
+    {% for item in page.cinema_images %}
+    imageRight.push("{{ item }}")
+    {% endfor %}
+    const sizeY = imageRight.length
+    const y = Math.floor(sizeY*Math.random())
+
+    $(document).ready(function(){
+    $('#leftImages').attr('src',imageLeft[x]);
+    $('#rightImages').attr('src',imageRight[y]);
+    });
+
+</script>
+
+<script>
+
+
+    const mediaQuery = window.matchMedia("(min-width: 600px)")
+    if (mediaQuery.matches) {
+        $( ".leftSide" ).mouseover(function() { 
+            $('a').css('color', 'black');
+            $('body').css('color', 'black');
+            $('.centerTitle').css('background-color', 'white');
+            $('.logo-white').hide();
+            $('.logo').show();
+            $('#leftImages').show();
+            $('#rightImages').hide();
+        });
+        $( ".rightSide" ).mouseover(function() {
+            $('a').css('color', 'white');
+            $('body').css('color', 'white');
+            $('.centerTitle').css('background-color', 'black');
+            $('.logo').hide();
+            $('.logo-white').show();
+            $('#rightImages').show();
+            $('#leftImages').hide();
+        });
+    }
+
+
+</script>

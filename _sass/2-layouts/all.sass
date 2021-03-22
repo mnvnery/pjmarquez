@@ -1,17 +1,40 @@
 ul
     list-style-type: none
     padding: 0
-    margin-left: 3vw
 li 
-    margin-bottom: 3vh
+    margin-bottom: 2.2vh
     opacity: 0.3
 
 li:hover
     opacity: 1 
 
 .centerList
-    display: flex
-    justify-content: center
-    align-items: center
+    display: grid
+    grid-template-columns: 1.5fr 1fr 1fr 
     font-size: 1.2vw
-    margin: 15px 3vw
+    margin: 0 1.5vw
+
+.photo-thumbnail
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 45%
+    position: absolute
+    height: 80%
+
+.thumbnail-img
+    width: 45%
+    z-index: 10
+
+.cinema-thumbnail
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 40%
+    position: absolute
+    height: 80%
+    right: 0
+
+.thumbnail-img-cinema 
+    width: 55%
+    z-index: 10

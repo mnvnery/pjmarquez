@@ -1,17 +1,22 @@
 .topNav 
     display: flex
     justify-content: space-between
-    margin: 15px 20px
+    margin: 1.17vw 1.5vw
+    font-size: 1.25vw
+    z-index: 2
 
 .bottomNav
-    display: flex
-    justify-content: space-between
+    display: grid
+    grid-template-columns: 1.5fr 1fr 1fr
     position: fixed
     bottom: 0
     left: 0
     right: 0
-    margin: 15px 20px
-    
+    margin: 1.17vw 1.5vw
+    font-size: 1.25vw
+
+.all 
+    justify-self: end
 
 .centerTitle 
     display: flex
@@ -24,17 +29,167 @@
     top: 0
     z-index: -1
 
+#mySidebar
+    display: none
+
+.menu-icon
+    display: none
+
+.logo 
+    width: 15% !important
+
+.logo-white
+    width: 15% !important
+    display: none
+
 .leftSide
     background-color: transparent
     width: 50vw
-    height: 100vh
+    height: 80vh
     position: fixed
     left: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-right: 10vw
+
 
 .rightSide
     background-color: transparent
     width: 50vw
-    height: 100vh
+    height: 80vh
     position: fixed
     right: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    padding-left: 10vw
 
+
+#leftImages
+    max-height: 50vh
+    max-width: 60%
+    
+
+#rightImages
+    max-width: 75%
+
+#leftImages
+    display: none
+
+#rightImages
+    display: none
+
+.mobile-flex
+    display: none
+
+.hamburger.index
+    display: none
+
+@media screen and(max-width: 835px)
+    #topNav
+        display: flex
+        flex-direction: row
+        font-size: 5.5vw
+        bottom: 0
+
+    #topNav a
+        margin-bottom: 0
+    
+
+    .mobile-flex
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 85vh
+        overflow: hidden
+
+    .leftSide, .rightSide
+        display: none
+
+    #mySidebar
+        background-color: white
+        z-index: 3
+        position: fixed
+        top: 0
+        right: 0
+        height: 100vh
+        width: 100vw
+        font-size: 6vw
+        padding: 40px
+
+    .close-icon 
+        float: right
+
+    .project-titles
+        opacity: 0.3
+        font-size: 5vw
+
+    .bottomNav
+        display: none
+
+    .centerTitle
+        margin: 30px 30px
+        display: flex
+        justify-content: space-between
+        align-items: start
+        z-index: 1
+        position: static
+
+    .logo
+        max-width: 68% !important
+        width: 68% !important
+        margin-top: 0.4vw
+
+    .logo-white
+        max-width: 68% !important
+        width: 68% !important
+        margin-top: 0.4vw
+    
+    #logo-white
+        display: none
+
+    #menu-white
+        display: none
+        
+    .mobile-none
+        display: none !important
+
+    .menu-icon
+        display: inline-block
+        width: 24px !important
+
+    #mobileImagem
+        width: 85%
+
+    .sidebar-link
+        margin-top: 2vh
+
+    .main-carousel 
+        .carousel-cell 
+            width: 100% /* full width */
+            height: 50vh /* height of carousel */
+            margin-right: 10px
+            display: flex
+            justify-content: center
+            align-items: center
+
+    .main-carousel
+        .carousel-cell img
+            max-width: 85%
+            max-height: 90%
+
+    .main-carousel.mobile
+        margin-top: 10vh
+
+    .hamburger.index
+        display: block
+
+
+
+
+        
+
+    

@@ -1,3 +1,18 @@
 ---
-layout: default
+layout: dark
 ---
+
+<a href="{{ site.baseurl }}/cinema" class="exitbtn"></a>
+
+<div class="trailer-container">
+    <div style="min-width: 60vw;">
+        {{ page.vimeo_embed_code }}
+        <p class="trailer-description">{{ page.title }} - {{ page.director }}. <span style="opacity: 0.5;">{{ page.moreInfo }}</span></p>
+    </div>
+</div>
+
+<div class="bottomNav">
+    <a href="{{ site.baseurl }}/about">ABOUT</a>
+    <a href="{{ site.baseurl }}/index">PEDRO J. MÁRQUEZ</a>
+    <a href="{{ site.baseurl }}/all" class="all">ALL</a>
+</div>

@@ -7,14 +7,64 @@
     font-family: "Minion Pro", sans-serif
     font-size: 1.2vw
     width: 40vw
-    height: 80vh
-    margin: 0px 40px
+    height: 79vh
+    margin: 0 3.125vw
     overflow: scroll
-    margin-top: 1.2vh
 
+.aboutText::-webkit-scrollbar 
+    display: none
+    
 .contact
     font-size: 1vw
+    margin-top: 0.9vh
 
 
 .contact p
     line-height: 1.2vh
+
+.navigation
+    display: none
+
+.hamburger.navigation
+    display: none
+
+@media screen and(max-width: 835px)
+    #about 
+        overflow: hidden
+        
+    .navigation
+        margin: 30px 30px
+        display: flex
+        justify-content: space-between
+        align-items: start
+        z-index: 1
+        position: fixed
+        top: 0
+
+    .centerAbout
+        display: flex
+        flex-direction: column-reverse
+        height: 83.5vh
+        margin-top: 10vh
+
+
+    .aboutText
+        height: 100%
+        width: 80vw
+        font-size: 4vw
+        margin: 0 30px
+        margin-bottom: 10vh
+
+    .contact
+        font-size: 3.5vw
+        margin: 40px 30px
+
+    .topNav.aboutpage
+        display: none
+
+    .hamburger.navigation
+        display: block
+        position: absolute
+        right: 0
+        top: 0
+        margin: 30px 30px

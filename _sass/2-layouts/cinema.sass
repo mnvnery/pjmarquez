@@ -1,7 +1,129 @@
 #dark
     background-color: black
     color: white
+    overflow: scroll
 
 
 #dark a 
     color: white
+    display: block
+    line-height: 0
+
+#dark .bottomNav
+    margin-bottom: 27px
+
+.title-container
+    margin: 15px 20px
+    position: fixed
+    top: 0
+
+.cinema-grid
+    margin: 45px 20px
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-items: flex-start
+    align-content: stretch
+
+
+.cinema-title
+    visibility: hidden
+
+.cinema-img 
+    margin: 10px 0
+    display: block
+    max-width: 40%
+    max-height: 40vh
+    
+.cinema-img:hover
+    cursor: pointer
+
+.i_0, .i_4, .i_6, .i_10, .i_12, .i_16, .i_18
+    align-self: flex-start
+
+.i_2, .i_8, .i_14, .i_20
+    margin-left: 8vw
+
+.i_5, .i_11, .i_17
+    align-self: flex-end
+    margin-right: 10vw
+
+.i_1, .i_3, .i_7, .i_9, .i_13, .i_15, .i_19
+    align-self: flex-end
+
+
+.exitbtn
+    position: fixed
+    top: 0
+    right: 0
+    width: 1.8vw
+    height: 1.2vw
+    margin: 1.17vw 1.5vw
+    
+.exitbtn:before, .exitbtn:after
+    position: absolute
+    left: 15px
+    content: ' '
+    height: 25px
+    width: 2px
+    background-color: #fff
+
+.exitbtn:before
+    transform: rotate(45deg)
+
+.exitbtn:after
+    transform: rotate(-45deg)
+
+
+.trailer-container
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    height: 95vh
+
+.trailer-description
+    font-size: 0.7em
+    margin-top: 10px
+
+.mobile
+    display: none !important
+
+@media screen and(max-width: 835px)
+    #dark a 
+        line-height: 1.5
+
+    #mySidebar.sidebar
+        background-color: black !important
+
+    .nav-dark
+        background-color: transparent !important
+
+    .logo-white
+        display: block
+
+    .cinema-grid
+        margin: 10vh 0 5vh 0
+
+    .cinema-img
+        max-width: 70%
+        margin: 4vh 0
+
+    .trailer-container
+        margin: 30px 
+        text-align: left
+        height: 80vh
+
+    .mobile
+        display: block !important
+    
+    #dark
+        .hamburger.is-active .hamburger-inner, .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after
+            background-color: white
+
+    .exitbtn
+        margin: 30px 30px
+        width: 30px
+        height: 30px
+        

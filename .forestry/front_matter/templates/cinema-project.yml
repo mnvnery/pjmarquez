@@ -32,6 +32,24 @@ fields:
   config:
     maxSize: 64
   label: Main Still
+- name: date
+  type: datetime
+  label: Date
+  description: Date is used to <strong>order</strong> the files. The more <strong>recent
+    </strong>the date, the higher up the project shows up on the list.
+  config:
+    required: false
+    date_format: 
+    time_format: 
+    display_utc: false
 pages:
 - _cinema/ex-shammam.html
+- _cinema/just-like-our-parents.html
+- _cinema/kidnapped.html
+- _cinema/lupin-the-third.html
+- _cinema/saura-s.html
+- _cinema/still-night.html
+- _cinema/the-red-virgin.html
+- _cinema/the-winds-of-lent.html
 - _cinema/ultimafloresta.html
+- _cinema/your-son.html

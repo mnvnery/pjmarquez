@@ -1,0 +1,20 @@
+---
+label: Home Page
+hide_body: true
+fields:
+- name: photo_images
+  type: image_gallery
+  config: {}
+  label: Photo Images
+  description: The site will load a different image every time it refreshes<br>
+- name: cinema_images
+  type: image_gallery
+  config: {}
+  label: Cinema Images
+  description: The site will load a different image every time it refreshes<br>
+- name: mobile_images
+  type: image_gallery
+  config: {}
+  label: Mobile Images
+pages:
+- index.html
