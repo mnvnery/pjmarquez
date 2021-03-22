@@ -41,10 +41,10 @@ mobile_images:
     -->
 
     <div class="leftSide">
-        <img id="leftImages" src="{{ site.baseurl }}/{{ page.photo_image }}" alt="photoimage" class="indeximg">
+        <img id="leftImages" alt="photoimage" class="indeximg">
     </div>
     <div class="rightSide">
-        <img id="rightImages" src="{{ site.baseurl }}/{{ page.cinema_image }}" alt="cinemaimage" class="indeximg">
+        <img id="rightImages" alt="cinemaimage" class="indeximg">
     </div>
 
     <div class="centerTitle">
@@ -58,7 +58,9 @@ mobile_images:
     </div>
 
     <div class="main-carousel mobile">
-
+        {% for item in page.mobile_images %}
+        <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
+        {% endfor%}
     </div>
 
     
@@ -87,6 +89,29 @@ mobile_images:
 </script>
 
 <script>
+const imageLeft = new Array ();
+
+    {% for item in page.photo_images %}
+    imageLeft.push("{{ item }}")
+    {% endfor %}
+    const size = imageLeft.length
+    const x = Math.floor(size*Math.random())
+
+    const imageRight = new Array ();
+    {% for item in page.cinema_images %}
+    imageRight.push("{{ item }}")
+    {% endfor %}
+    const sizeY = imageRight.length
+    const y = Math.floor(sizeY*Math.random())
+
+    $(document).ready(function(){
+    $('#leftImages').attr('src',imageLeft[x]);
+    $('#rightImages').attr('src',imageRight[y]);
+    });
+
+</script>
+
+<script>
 
 
     const mediaQuery = window.matchMedia("(min-width: 600px)")
@@ -108,20 +133,6 @@ mobile_images:
             $('.logo-white').show();
             $('#rightImages').show();
             $('#leftImages').hide();
-        });
-    }
-    
-    const mobileQuery = window.matchMedia("(max-width: 600px)")
-    if (mobileQuery.matches) {
-        var arrayCombined = $.map(imageRight, function(v, i) {
-        return [v, imageLeft[i]];
-        });
-
-        $(document).ready(function(){
-            $.each(arrayCombined, function(index, value){
-                const $cellElems = $(`<div class="carousel-cell"><img data-flickity-lazyload="${value}"></div>`);
-                $carousel.flickity( 'append', $cellElems );
-            });
         });
     }
 
