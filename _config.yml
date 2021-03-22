@@ -2,7 +2,6 @@ title: Pedro J. Márquez
 email: pedro@pjmarquez.com
 description: >- # this means to ignore newlines until "baseurl:"
   Portfolio website of cinematographer and photographer Pedro J.Marquéz
-baseurl: "/" 
 url: "https://pjmarquez.com" 
 
 # Build settings
