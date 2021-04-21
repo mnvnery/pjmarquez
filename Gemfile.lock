@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/tmm1/http_parser.rb.git
+  revision: 225354b3d94d8d76774bac5bb2ac0139dd75662c
+  specs:
+    http_parser.rb (0.6.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -11,7 +17,6 @@ GEM
     eventmachine (1.2.7)
     ffi (1.14.2)
     forwardable-extended (2.6.0)
-    http_parser.rb (0.6.0)
     i18n (1.8.9)
       concurrent-ruby (~> 1.0)
     jekyll (4.2.0)
@@ -61,8 +66,10 @@ GEM
 
 PLATFORMS
   x86_64-darwin-19
+  x86_64-darwin-20
 
 DEPENDENCIES
+  http_parser.rb!
   jekyll (~> 4.2.0)
   jekyll-feed (~> 0.12)
   tzinfo (~> 1.2)
@@ -70,4 +77,4 @@ DEPENDENCIES
   wdm (~> 0.1.1)
 
 BUNDLED WITH
-   2.2.11
+   2.2.16
