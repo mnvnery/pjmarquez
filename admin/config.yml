@@ -11,6 +11,8 @@ collections:
     create: true # Allow users to create new documents in this collection
     extension: html
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    editor:
+      preview: false
     fields: # The fields for each document, usually in front matter
       - { widget: string, name: title, label: "Project Title" }
       - { widget: string, name: director, label: "Director" }
@@ -24,6 +26,8 @@ collections:
     folder: "_photo"
     extension: html
     slug: "{{slug}}"
+    editor:
+      preview: false
     fields:
       - { widget: string, name: title, label: "Project Title" }
       - { widget: list, name: images, label: "All images", field: {label: Image, name: image, widget: image} }
