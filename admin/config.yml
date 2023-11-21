@@ -46,7 +46,7 @@ collections:
         name: "about"
         file: 'about.html'
         fields:
-          - { label: 'About Body', name: 'body', widget: markdown, modes: [rich_text] }
+          - { label: 'About Body', name: 'body_info', widget: markdown, modes: [rich_text] }
           - { widget: string, name: email, label: "Email" }
           - { widget: string, name: imdbLink, label: "IMDB Link" }
           - { widget: string, name: vimeoLink, label: "Vimeo Link" }
