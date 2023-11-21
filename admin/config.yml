@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "assets/img"
+
+collections:
+  - name: "cinema" # Used in routes, e.g., /admin/collections/blog
+    label: "Cinema" # Used in the UI
+    folder: "_cinema" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    extension: html
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - { widget: string, name: layout, label: "Layout", hidden: true, default: "cinema" }
+      - { widget: string, name: title, label: "Project Title" }
+      - { widget: string, name: director, label: "Director" }
+      - { widget: string, name: moreInfo, label: "More Information", description: "Description/Awards" }
+      - { name: vimeo_embed_code, default: '', label: "Vimeo Embed Code", description: "Bring in the embed code from Vimeo or YouTube", widget: markdown, modes: [rich_text] }
+      - { name: main_image, widget: image, label: "Main Still" }
+      - { name: date, label: "Date", widget: "datetime", dateFormat: "DD/MM/YYYY", time_format: false, utc: false, required: false, description: "Date is used to order the files. The more recent the date, the higher up the project shows up on the list." }
+  - name: "photo"
+    label: "Photo Project"
+    create: true
+    folder: "_photo"
+    extension: html
+    slug: "{{slug}}"
+    fields:
+      - { widget: string, name: layout, label: "Layout", default: "photo", hidden: true }
+      - { widget: string, name: title, label: "Project Title" }
+      - { widget: gallery, name: images, label: "All images" }
+      - { widget: image, name: thumbnail, label: "Thumbnail", config: { maxSize: 64 }, description: "Image to show up on All page when hovering title" }
+      - { widget: datetime, name: date, label: "Date", description: "", config: { required: false, dateFormat: "", timeFormat: "", displayUtc: false } }
+      - { name: project_description, label: "Project Description", widget: markdown, modes: [rich_text] }
+  - name: 'pages'
+    label: 'Pages'
+    editor:
+      preview: false
+    files:
+      - label: 'Home'
+        name: "home"
+        file: 'index.html'
+        fields:
+          - { label: 'Photo Images' , name: 'photo_images', widget: list, field: {label: Image, name: image, widget: image}}
+          - { label: 'Cinema Images', name: 'cinema_images', widget: list,   field: {label: Image, name: image, widget: image}}
+          - { label: 'Mobile Images', name: 'mobile_images', widget: list,   field: {label: Image, name: image, widget: image}}
+      - label: 'About'
+        name: "about"
+        file: 'about.html'
+        fields:
+          - { label: 'About Body', name: 'body', widget: markdown, modes: [rich_text] }
+          - { widget: string, name: email, label: "Email" }
+          - { widget: string, name: imdbLink, label: "IMDB Link" }
+          - { widget: string, name: vimeoLink, label: "Vimeo Link" }
+          - { widget: string, name: instagramLink, label: "Instagram Link" }
+    
