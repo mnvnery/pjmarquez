@@ -33,7 +33,7 @@ layout: default
     {% endfor %}
     {% if page.project_description %}
         <div class="carousel-cell">
-            <div class="projectText">{{page.project_description}}</div>
+            <div class="projectText">{{page.project_description | markdownify}}</div>
         </div>
     {% endif %}
 </div>

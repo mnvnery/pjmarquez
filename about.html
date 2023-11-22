@@ -34,7 +34,7 @@ instagramLink: https://www.instagram.com/bananamellows/
 
 <div class="centerAbout">
     <div class="aboutText">
-        {{ page.body_info }}
+        {{ page.body_info | markdownify }}
     </div>
     <div class="contact">
         <p>{{ page.email }}</p>   
