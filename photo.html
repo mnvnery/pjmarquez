@@ -39,7 +39,7 @@ layout: default
 <div class="photo-carousel">
     {% for test in tests limit:1 %}
         {% for item in test.images %}
-        <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
+        <div class="carousel-cell"><img src="{{ site.baseurl }}{{ item }}"/></div>
         {% endfor %}
         {% if test.project_description %}
         <div class="carousel-cell">
