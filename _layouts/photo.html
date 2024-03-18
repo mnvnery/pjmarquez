@@ -29,7 +29,7 @@ layout: default
 
 <div class="photo-carousel">
     {% for item in page.images %}
-        <div class="carousel-cell"><img src="{{ site.baseurl }}/{{ item }}"/></div>
+        <div class="carousel-cell"><img src="{{ site.baseurl }}{{ item }}"/></div>
     {% endfor %}
     {% if page.project_description %}
         <div class="carousel-cell">
