@@ -19,10 +19,10 @@ layout: default
   <div></div>    
     <ul>
         {% for photo in site.photo reversed %}
-        <a href="{{ site.baseurl }}{{ photo.url }}"><li class="item" data-image="{{ site.baseurl }}/{{ photo.thumbnail }}">{{ photo.title }}</li></a>
+        <a href="{{ site.baseurl }}{{ photo.url }}"><li class="item" data-image="{{ site.baseurl }}{{ photo.thumbnail }}">{{ photo.title }}</li></a>
         {% endfor %}
         {% for cinema in site.cinema %}
-        <a href="{{ site.baseurl}}{{ cinema.url }}"><li class="cinemaitem" data-image="{{ site.baseurl }}/{{ cinema.main_image }}">{{ cinema.title }}</li></a>
+        <a href="{{ site.baseurl}}{{ cinema.url }}"><li class="cinemaitem" data-image="{{ site.baseurl }}{{ cinema.main_image }}">{{ cinema.title }}</li></a>
         {% endfor %}
     </ul>
     <div></div>
