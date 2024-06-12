@@ -20,6 +20,7 @@ collections:
       - { name: vimeo_embed_code, default: '', label: "Vimeo Embed Code", description: "Bring in the embed code from Vimeo or YouTube", widget: markdown, modes: [rich_text] }
       - { name: main_image, widget: image, label: "Main Still" }
       - { name: date, label: "Date", widget: "datetime", dateFormat: "DD/MM/YYYY", time_format: false, utc: false, required: false, description: "Date is used to order the files. The more recent the date, the higher up the project shows up on the list." }
+      - { widget: hidden, name: layout, label: "Layout", default: cinema }
   - name: "photo"
     label: "Photo"
     create: true
@@ -34,6 +35,7 @@ collections:
       - { widget: image, name: thumbnail, label: "Thumbnail", config: { maxSize: 64 }, description: "Image to show up on All page when hovering title" }
       - { widget: datetime, name: date, label: "Date", description: "", config: { required: false, dateFormat: "", timeFormat: "", displayUtc: false } }
       - { name: project_description, label: "Project Description", widget: markdown, modes: [rich_text] }
+      - { widget: hidden, name: layout, label: "Layout", default: photo }
   - name: 'pages'
     label: 'Pages'
     editor:
