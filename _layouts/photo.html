@@ -32,9 +32,11 @@ layout: default
         <div class="carousel-cell"><img src="{{ site.baseurl }}{{ item }}"/></div>
     {% endfor %}
     {% if page.project_description %}
+        {% for item in page.project_description %}
         <div class="carousel-cell">
-            <div class="projectText">{{page.project_description | markdownify}}</div>
+            <div class="projectText">{{ item | markdownify}}</div>
         </div>
+        {% endfor %}
     {% endif %}
 </div>
 
@@ -49,6 +51,7 @@ layout: default
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+<!--<script src="https://unpkg.com/flickity-fullscreen@2/fullscreen.js"></script>-->
 
 <script>
     $('.photo-carousel').flickity({
@@ -57,7 +60,7 @@ layout: default
     contain: true,
     pageDots: false,
     wrapAround: true,
-    prevNextButtons: true,
+    prevNextButtons: true
     });
 
     const mediaQuery = window.matchMedia("(min-width: 600px)")
