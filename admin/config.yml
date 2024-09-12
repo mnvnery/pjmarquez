@@ -34,7 +34,7 @@ collections:
       - { widget: list, name: images, label: "All images", field: {label: Image, name: image, widget: image} }
       - { widget: image, name: thumbnail, label: "Thumbnail", config: { maxSize: 64 }, description: "Image to show up on All page when hovering title" }
       - { widget: datetime, name: date, label: "Date", description: "", config: { required: false, dateFormat: "", timeFormat: "", displayUtc: false } }
-      - { widget: list, name: project_description, label: "Project Description(s)",  field: { widget: markdown, modes: [rich_text] } }
+      - { widget: list, name: project_description, label: "Project Description(s)",  field: { label: Description, name: description, widget: markdown, modes: [rich_text] } }
       - { widget: hidden, name: layout, label: "Layout", default: photo }
   - name: 'pages'
     label: 'Pages'
