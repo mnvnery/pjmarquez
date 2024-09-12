@@ -177,20 +177,23 @@
 
     .main-carousel 
         .carousel-cell 
-            width: 100% /* full width */
-            height: 50vh /* height of carousel */
-            margin-right: 10px
+            width: 100% /* Full width */
+            padding: 0 8vw /* Padding on left and right */
+            height: 65vh /* Adjust based on preference */
             display: flex
             justify-content: center
             align-items: center
 
-    .main-carousel
+    .main-carousel 
         .carousel-cell img
-            max-width: 85%
-            max-height: 90%
+            width: 100% /* Images will fill the entire carousel cell */
+            height: 100% /* Maintain aspect ratio */
+            object-fit: contain /* Ensures the image is contained without being cropped */
+            padding: 0 /* No padding on the image itself */
 
     .main-carousel.mobile
-        margin-top: 10vh
+        margin-top: 8vh
+        margin-bottom: 2vh
 
     .hamburger.index
         display: block
