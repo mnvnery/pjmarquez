@@ -27,7 +27,7 @@ layout: default
     {% endfor %}
 </div>
 
-<div class="photo-carousel">
+<div class="photo-carousel" data-flickity='{ "fullscreen": true }'>
     {% for item in page.images %}
         <div class="carousel-cell"><img src="{{ site.baseurl }}{{ item }}"/></div>
     {% endfor %}
@@ -51,24 +51,34 @@ layout: default
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
-<!--<script src="https://unpkg.com/flickity-fullscreen@2/fullscreen.js"></script>-->
+<script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
 
 <script>
-    $('.photo-carousel').flickity({
-    // options
-    cellAlign: 'center',
-    contain: true,
-    pageDots: false,
-    wrapAround: true,
-    prevNextButtons: true
+    $(document).ready(function() {
+        // Define mobile media query
+        const mobileMediaQuery = window.matchMedia("(max-width: 600px)");
+        
+        if (mobileMediaQuery.matches) {
+            // Initialize Flickity with fullscreen enabled for mobile
+            $('.photo-carousel').flickity({
+                cellAlign: 'center',
+                contain: true,
+                pageDots: false,
+                wrapAround: true,
+                prevNextButtons: true,
+                fullscreen: true // Enable fullscreen mode
+            });
+        } else {
+            // Initialize Flickity with other options for larger screens
+            $('.photo-carousel').flickity({
+                cellAlign: 'center',
+                contain: true,
+                pageDots: false,
+                wrapAround: true,
+                prevNextButtons: true,
+                autoPlay: 5000,
+                fade: true // Apply fade and autoplay options for desktop
+            });
+        }
     });
-
-    const mediaQuery = window.matchMedia("(min-width: 600px)")
-    if (mediaQuery.matches) {
-        $('.photo-carousel').flickity({
-        autoPlay: 5000,
-        fade: true,
-        });
-    }   
-
 </script>
