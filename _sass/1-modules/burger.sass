@@ -1,0 +1,53 @@
+.menu__mobile
+  display: flex
+  align-items: center
+  justify-content: center
+  height: auto
+  z-index: 10
+
+  &_button
+    position: relative
+    height: 16px
+    width: 30px
+    cursor: pointer
+    background-color: transparent
+
+    &.active
+      span
+        opacity: 0
+
+      &:before,
+      &:after
+        top: 40%
+
+      &:before
+        transform: rotate(45deg)
+
+      &:after
+        transform: rotate(-45deg)
+
+    span,
+    &:before,
+    &:after
+      display: block
+      position: absolute
+      height: 1px
+      width: 100%
+      background-color: #1e272e
+      border-radius: 6px
+      opacity: 1
+
+    &:before,
+    &:after
+      content: ""
+      transition: top 0.35s cubic-bezier(.23, 1, .32, 1), transform 0.35s cubic-bezier(.23, 1, .32, 1)
+
+    span
+      top: 50%
+      transform: translateY(-50%)
+
+    &:before
+      top: 0
+
+    &:after
+      top: calc(100% - 1px)
