@@ -41,7 +41,7 @@ layout: default
 </div>
 -->
 
-<div class="photo-carousel">
+<div class="photo-carousel" data-flickity='{ "fullscreen": true }'>
     {% for test in tests limit:1 %}
         {% for item in test.images %}
         <div class="carousel-cell"><img src="{{ site.baseurl }}{{ item }}"/></div>
@@ -64,6 +64,7 @@ layout: default
 
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="https://unpkg.com/flickity-fade@1/flickity-fade.js"></script>
+<script src="https://unpkg.com/flickity-fullscreen@1/fullscreen.js"></script>
 
 <script>
     $('.photo-carousel').flickity({
@@ -73,6 +74,7 @@ layout: default
     pageDots: false,
     wrapAround: true,
     prevNextButtons: true,
+    fullscreen: true
     });
 
     const mediaQuery = window.matchMedia("(min-width: 600px)")
@@ -80,7 +82,9 @@ layout: default
         $('.photo-carousel').flickity({
         autoPlay: 5000,
         fade: true,
+        fullscreen: false
         });
-    }   
+    } 
 
 </script>
+

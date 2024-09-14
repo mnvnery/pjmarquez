@@ -66,6 +66,10 @@
     font-size: 1.2vw
     max-width: 38vw
 
+@media screen and ( min-width: 835px )
+    .flickity-button.flickity-fullscreen-button.flickity-fullscreen-button-view
+        display: none
+
 @media screen and ( max-width: 835px )
     .carousel-img
         max-width: 82%
@@ -123,3 +127,9 @@
     .projectText
         max-width: 85vw
         font-size: 4vw
+
+    .flickity-enabled.is-fullscreen
+        .carousel-cell 
+            margin-top: 6vh
+
+    
