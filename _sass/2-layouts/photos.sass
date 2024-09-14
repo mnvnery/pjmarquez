@@ -6,6 +6,15 @@
 .photo-carousel.is-fullscreen .carousel-cell 
     height: 100%;
 
+.flickity-enabled.is-fullscreen
+    z-index: 11 !important
+
+.flickity-enabled.is-fullscreen
+    .projectText
+        color: white
+
+.flickity-page-dots 
+    display: none !important
 
 .photo-carousel 
     .carousel-cell 
@@ -26,6 +35,18 @@
 .flickity-prev-next-button
     .flickity-button-icon
         display: none
+
+.flickity-button.flickity-fullscreen-button.flickity-fullscreen-button-view
+    .flickity-button-icon
+        display: none
+
+.flickity-button.flickity-fullscreen-button.flickity-fullscreen-button-view
+    position: absolute
+    top: 12vh
+    left: 26vw
+    height: 47vh
+    width: 47vw
+    background: transparent
 
 
 .flickity-prev-next-button
